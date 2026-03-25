@@ -9,7 +9,7 @@ body {
 background: #fff;
 color: #333;
 line-height: 1.6;
-overflow-x: hidden;
+
 }
 
 /* HERO */
@@ -387,61 +387,30 @@ background-position:center 25%;
 
 .cards-wrapper {
   padding: 20px 0;
+  overflow: hidden;
 }
+
 
 /* DESKTOP */
 .cards-container {
   display: flex;
   gap: 20px;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
-
-/* MOBILE = SWIPE */
 @media (max-width: 768px) {
+
+  .cards-wrapper {
+    overflow: hidden; /* 🔥 NU scroll aici */
+  }
 
   .cards-container {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .cards-container::-webkit-scrollbar {
-    display: none;
-  }
-
-  .card {
-    flex: 0 0 80%;
-    scroll-snap-align: center;
-  }
-}
-
-@media (max-width: 768px) {
-
-  .gallery-container {
     display: flex;
-    overflow-x: auto;
-    gap: 10px;
-
-    scroll-snap-type: x mandatory;
-  }
-
-  .gallery-container img {
-    flex: 0 0 90%;
-    border-radius: 10px;
-    scroll-snap-align: center;
-  }
-
-}
-
-@media (max-width: 768px) {
-
-  .cards-container {
     flex-wrap: nowrap;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    gap: 16px;
+
+    overflow-x: auto; /* 🔥 scroll aici */
+    padding: 20px 0;  /* 🔥 fără stânga/dreapta */
   }
 
   .cards-container::-webkit-scrollbar {
@@ -449,35 +418,8 @@ background-position:center 25%;
   }
 
   .card {
-    flex: 0 0 80% !important;
-    max-width: 80% !important;
-    scroll-snap-align: center;
+    flex: 0 0 85%;
+    max-width: 85%;
   }
 
-  .cards-container {
-    padding-left: 16px;
-  }
-
-}
-
-.whatsapp {
-  z-index: 999;
-}
-
-@media (max-width: 768px) {
-
-  .cards-container {
-    padding: 0 16px; /* în loc de doar left */
-  }
-
-  .card {
-    flex: 0 0 85% !important;
-    max-width: 85% !important;
-    scroll-snap-align: start; /* schimbăm din center */
-  }
-
-}
-
-.prev, .next {
-  z-index: 10000;
 }
