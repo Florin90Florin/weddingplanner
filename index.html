@@ -26,20 +26,27 @@
 <section>
   <h2>Serviciile noastre</h2>
 
-<div class="card">
-  <h3>Organizare completă</h3>
-  <p>Gestionăm fiecare detaliu al nunții tale, de la concept până la execuție impecabilă.</p>
-</div>
+  <div class="cards-wrapper">
+    <div class="cards-container">
 
-<div class="card">
-  <h3>Coordonare în ziua nunții</h3>
-  <p>Ne asigurăm că totul decurge perfect, astfel încât tu să te bucuri de fiecare moment.</p>
-</div>
+      <div class="card">
+        <h3>Organizare completă</h3>
+        <p>Gestionăm fiecare detaliu al nunții tale, de la concept până la execuție impecabilă.</p>
+      </div>
 
-<div class="card">
-  <h3>Consultanță personalizată</h3>
-  <p>Îți oferim ghidare profesională pentru a lua cele mai bune decizii.</p>
-</div>
+      <div class="card">
+        <h3>Coordonare în ziua nunții</h3>
+        <p>Ne asigurăm că totul decurge perfect, astfel încât tu să te bucuri de fiecare moment.</p>
+      </div>
+
+      <div class="card">
+        <h3>Consultanță personalizată</h3>
+        <p>Îți oferim ghidare profesională pentru a lua cele mai bune decizii.</p>
+      </div>
+
+    </div>
+  </div>
+
 </section>
 
 <section class="why">
@@ -112,24 +119,30 @@
  <div class="gallery">
   
   <div class="gallery-item">
-    <img src="img1.jpg">
-  </div>
+  <img src="poze/nunta (2).jpg" onclick="openLightbox(this)">
+</div>
 
   <div class="gallery-item">
-    <img src="img2.jpg">
-  </div>
+  <img src="poze/NUNTA1.jpg" onclick="openLightbox(this)">
+</div>
 
   <div class="gallery-item">
-    <img src="img3.jpg">
-  </div>
+  <img src="img3.jpg" onclick="openLightbox(this)">
+</div>
 
   <div class="gallery-item">
-    <img src="img4.jpg">
-  </div>
+  <img src="img4.jpg" onclick="openLightbox(this)">
+</div>
 
-  <div class="gallery-item">
-    <img src="img5.jpg">
-  </div>
+
+
+
+<!-- pentru pozele verticale  -->
+<div class="gallery-item portrait">
+  <img src="img6.jpg" onclick="openLightbox(this)">  
+</div> 
+
+
 
 </div>
   <a href="galerie.html" class="gallery-more">
@@ -215,7 +228,8 @@
 </section>
 
 <!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/40767464016" class="whatsapp" target="_blank">
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/40763621719" class="whatsapp" target="_blank">
   <i class="fa-brands fa-whatsapp"></i>
 </a>
 
@@ -249,7 +263,15 @@
 
     <button onclick="sendWhatsApp()" class="btn">Confirmă</button>
 
-  </div>    
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+  <span class="close-lightbox" onclick="closeLightbox()">✖</span>
+  <span class="prev" onclick="changeSlide(-1)">❮</span>
+  <img id="lightbox-img">
+  <span class="next" onclick="changeSlide(1)">❯</span>
 </div>
 
 <!-- SCRIPT FINAL -->
@@ -285,20 +307,54 @@ function sendWhatsApp() {
 
 Numele meu este ${name}.
 
-Aș dori să programez o discuție pentru organizarea nunții:
-
 📅 Data: ${date}
 ⏰ Ora: ${time}
 
 Aștept confirmarea. Mulțumesc!`;
 
-  let telefon = "40767464016";
-
-  let url = `https://wa.me/${telefon}?text=${encodeURIComponent(mesaj)}`;
-
+  let url = `https://wa.me/40763621719?text=${encodeURIComponent(mesaj)}`;
   window.open(url, "_blank");
 }
+
+/* LIGHTBOX */
+let currentIndex = 0;
+let images = [];
+
+function openLightbox(img) {
+  images = Array.from(document.querySelectorAll("img[onclick='openLightbox(this)']"));
+  currentIndex = images.indexOf(img);
+
+  document.getElementById("lightbox").style.display = "flex";
+  document.getElementById("lightbox-img").src = img.src;
+}
+
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
+}
+
+function changeSlide(direction) {
+  currentIndex += direction;
+
+  if (currentIndex < 0) currentIndex = images.length - 1;
+  if (currentIndex >= images.length) currentIndex = 0;
+
+  document.getElementById("lightbox-img").src = images[currentIndex].src;
+}
 </script>
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
+}
+</script>
+
+<div id="lightbox" class="lightbox">
+  
+  <span class="close-lightbox" onclick="closeLightbox()">✖</span>
+
+  <span class="prev" onclick="changeSlide(-1)">❮</span>
+  <img id="lightbox-img">
+  <span class="next" onclick="changeSlide(1)">❯</span>
+
+</div>
 
 </body>
 </html>
