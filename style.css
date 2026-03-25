@@ -464,6 +464,20 @@ background-position:center 25%;
   z-index: 999;
 }
 
+@media (max-width: 768px) {
+
+  .cards-container {
+    padding: 0 16px; /* în loc de doar left */
+  }
+
+  .card {
+    flex: 0 0 85% !important;
+    max-width: 85% !important;
+    scroll-snap-align: start; /* schimbăm din center */
+  }
+
+}
+
 .prev, .next {
   z-index: 10000;
 }
