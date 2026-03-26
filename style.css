@@ -12,22 +12,73 @@ body {
 
 }
 
+/* 🔥 LOGO HERO - DESKTOP */
+.hero-logo img {
+  width: clamp(300px, 60vw, 520px); /* 🔥 era 800px → prea mult */
+  max-width: 100%;
+
+  opacity: 0.98;
+
+  filter:
+    drop-shadow(0 10px 25px rgba(0, 0, 0, 0.85))
+    drop-shadow(0 0 18px rgba(224, 185, 115, 0.6));
+    
+}
+
+/* 🔥 SPACING */
+.hero-logo {
+  margin-bottom: -10px;
+
+  position: static;
+ 
+}
+
+@media (max-width: 768px) {
+  .hero-logo {
+    margin-bottom: -20px;
+  }
+   .hero-logo img {
+    width: 75vw; /* 🔥 mai mare pe telefon */
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-logo img {
+    width: clamp(260px, 50vw, 500px);
+  }
+}
+
+
 /* HERO */
 .hero {
-  height: 100vh;
+  min-height: 100svh; /* în loc de height */
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url('https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1200') center/cover;
+
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: white;
-  padding: 20px;
+
+  padding: 80px 20px 50px; /* 🔥 mai compact, mai premium */
+  box-sizing: border-box;
+}
+
+.hero h1,
+.hero p {
+  margin: 0;
 }
 
 .hero-content {
-  max-width: 500px;
+  max-width: 1000px;
   animation: fadeUp 1s ease;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 6px; /* 🔥 balans perfect */
 }
 
 .hero-content h1 {
@@ -35,6 +86,8 @@ body {
   font-size: 38px;
   font-weight: 600;
   line-height: 1.2;
+  margin-top: 0;
+  /* 🔥 scoate spațiul de sus */
 }
 
 .hero-content h1 span {
@@ -43,9 +96,79 @@ body {
 
 .hero-content p {
   font-size: 17px;
-  opacity: 0.85;
+
   margin: 15px 0 30px;
 }
+
+.hero-badges {
+  margin-top: 15px;
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+
+
+
+/* GOLD PREMIUM TEXT */
+.gold-text {
+  color: #e0b973;
+
+  text-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.8),
+    0 0 10px rgba(224, 185, 115, 0.5);
+
+  font-size: 1em; /* 🔥 NU îl mări separat */
+}
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  line-height: 1.15;
+  margin: 0;
+
+  text-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.9),
+    0 8px 20px rgba(0, 0, 0, 0.7),
+    0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+
+/* SUBTEXT */
+.hero-sub {
+  font-size: 1rem;
+  margin: 6px 0 12px; /* 🔥 redus de la 15 / 30 */
+
+  text-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.9),
+    0 6px 18px rgba(0, 0, 0, 0.7);
+}
+
+/* BUTTON PREMIUM */
+.hero-btn {
+  border-radius: 30px;
+  box-shadow: 0 10px 25px rgba(212, 163, 115, 0.4);
+  animation: fadeUp 1.6s ease;
+
+}
+
+/* BADGES */
+.hero-badges {
+  margin-top: 8px;
+  font-size: 13px;
+  opacity: 0.85;
+  animation: fadeUp 2s ease;
+}
+
+
+/* GLOW PE HERO */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255, 215, 0, 0.08), transparent 70%);
+  pointer-events: none;
+}
+
+
 
 @keyframes fadeUp {
   from {
@@ -60,18 +183,101 @@ body {
 }
 
 /* BUTTON */
+/* 🔥 BUTTON BASE */
 .btn {
-  background: #d4a373;
-  color: white;
-  padding: 14px 22px;
-  border-radius: 10px;
+  background: linear-gradient(135deg, #e0b973, #d4a373);
+  color: #fff;
+
+  padding: 14px 26px;
+  border-radius: 30px;
   border: none;
+
+  font-weight: 500;
+  letter-spacing: 0.3px;
+
   cursor: pointer;
-  transition: 0.3s;
+
+  box-shadow:
+    0 8px 20px rgba(212, 163, 115, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+
+  transition: transform 0.25s ease, filter 0.25s ease, box-shadow 0.25s ease;
 }
 
+/* 🔥 GENERAL HOVER */
 .btn:hover {
-  background: #c08c5a;
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+
+  box-shadow:
+    0 12px 28px rgba(212, 163, 115, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+/* 🔥 CLICK */
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* 🔥 CTA BUTTON */
+.cta-btn {
+  background: linear-gradient(135deg, #e0b973, #d4a373);
+  color: #000;
+
+  font-weight: 600;
+
+  position: relative;
+  overflow: hidden;
+
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+
+  transition: transform 0.25s ease, filter 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* 🔥 CTA HOVER (subtil galben) */
+.cta-btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.3);
+}
+
+/* 🔥 CTA CLICK */
+.cta-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) inset;
+}
+
+/* 🔥 SHINE EFFECT (lumina care trece) */
+.cta-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 40%;
+  height: 100%;
+
+  background: linear-gradient(120deg,
+      transparent,
+      rgba(255, 255, 255, 0.35),
+      transparent);
+
+  transform: skewX(-20deg);
+}
+
+/* 🔥 ANIMAȚIE SHINE */
+.cta-btn:hover::before {
+  animation: shineMove 0.9s ease;
+}
+
+@keyframes shineMove {
+  0% {
+    left: -80%;
+  }
+
+  100% {
+    left: 120%;
+  }
 }
 
 /* SECTIONS */
@@ -79,6 +285,31 @@ section {
   padding: 50px 20px;
   text-align: center;
 }
+
+.extra-services {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.extra-services h2 {
+  margin-bottom: 20px;
+}
+
+/* 🔥 CTA EXTRA SERVICES */
+.extra-cta {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.extra-cta h2 {
+  margin-bottom: 10px;
+}
+
+.extra-cta p {
+  opacity: 0.85;
+  margin-bottom: 25px;
+}
+
 
 h2 {
   font-size: 24px;
@@ -88,34 +319,62 @@ h2 {
 
 /* CARDS */
 .card {
-  background: #f3e8dc;
+  background: linear-gradient(180deg, #f8f2ea, #f3e8dc);
   padding: 25px;
-  border-radius: 14px;
+  border-radius: 16px;
+
   margin-top: 20px;
-  border: 1px solid rgba(212, 163, 115, 0.2);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
-  transition: 0.3s;
+
+  border: 1px solid rgba(212, 163, 115, 0.25);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.06),
+    0 4px 10px rgba(0, 0, 0, 0.03);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
 }
 
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.1),
+    0 10px 20px rgba(0, 0, 0, 0.05);
+
   border-color: #d4a373;
 }
 
+/*Linia aurie */
 .card::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
+
   width: 100%;
-  height: 4px;
-  background: #d4a373;
+  height: 3px;
+
+  background: linear-gradient(90deg, #d4a373, #ffd700, #d4a373);
+
   transform: scaleX(0);
-  transition: 0.3s;
+  transition: transform 0.3s ease;
 }
+
+.card h3 {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.card p {
+  opacity: 0.85;
+}
+
+.card:hover::before {
+  transform: scaleX(1);
+}
+
 
 .card:hover::before {
   transform: scaleX(1);
@@ -493,8 +752,13 @@ h2 {
 }
 
 @keyframes goldShine {
-  0% { background-position: 0%; }
-  100% { background-position: 200%; }
+  0% {
+    background-position: 0%;
+  }
+
+  100% {
+    background-position: 200%;
+  }
 }
 
 .footer-top-line {
@@ -565,6 +829,15 @@ h2 {
   opacity: 0.6;
 }
 
+
+/* 🔥SCRISUL GEN BANNER */
+@media (max-width: 768px) {
+  .hero-logo img {
+    width: 140px;
+  }
+}
+
+
 /* 🔥 MOBILE FIX IMPORTANT */
 @media (max-width: 768px) {
   .footer-container {
@@ -618,7 +891,7 @@ h2 {
 .footer-col p,
 .footer-copy,
 .footer-by {
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 
@@ -641,3 +914,4 @@ h2 {
     box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
   }
 }
+
