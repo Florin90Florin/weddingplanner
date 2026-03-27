@@ -14,15 +14,13 @@ body {
 
 /* 🔥 LOGO HERO - DESKTOP */
 .hero-logo img {
-  width: clamp(300px, 60vw, 520px); /* 🔥 era 800px → prea mult */
+  width: clamp(300px, 60vw, 520px);
   max-width: 100%;
-
   opacity: 0.98;
 
   filter:
-    drop-shadow(0 10px 25px rgba(0, 0, 0, 0.85))
-    drop-shadow(0 0 18px rgba(224, 185, 115, 0.6));
-    
+    drop-shadow(0 6px 14px rgba(0, 0, 0, 0.9))
+    drop-shadow(0 2px 6px rgba(0, 0, 0, 0.7));
 }
 
 /* 🔥 SPACING */
@@ -31,21 +29,6 @@ body {
 
   position: static;
  
-}
-
-@media (max-width: 768px) {
-  .hero-logo {
-    margin-bottom: -20px;
-  }
-   .hero-logo img {
-    width: 75vw; /* 🔥 mai mare pe telefon */
-  }
-}
-
-@media (max-width: 1024px) {
-  .hero-logo img {
-    width: clamp(260px, 50vw, 500px);
-  }
 }
 
 
@@ -162,7 +145,7 @@ body {
 /* GLOW PE HERO */
 .hero::after {
   content: "";
-  position: absolute;
+  position: relative;
   inset: 0;
   background: radial-gradient(circle at center, rgba(255, 215, 0, 0.08), transparent 70%);
   pointer-events: none;
@@ -375,10 +358,6 @@ h2 {
   transform: scaleX(1);
 }
 
-
-.card:hover::before {
-  transform: scaleX(1);
-}
 
 /* WHY */
 .why-item {
@@ -634,26 +613,6 @@ h2 {
   }
 }
 
-/* MOBILE */
-@media (max-width:768px) {
-  .cta-btn {
-    width: 100%;
-  }
-}
-
-/* DESKTOP */
-@media (min-width:768px) {
-  .contact-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (min-width:1024px) {
-  .cta {
-    background-size: 100%;
-    background-position: center 25%;
-  }
-}
 
 .prev,
 .next {
@@ -712,6 +671,8 @@ h2 {
     /* 🔥 fără stânga/dreapta */
   }
 
+  
+
   .cards-container::-webkit-scrollbar {
     display: none;
   }
@@ -731,6 +692,57 @@ h2 {
   padding: 18px 15px 10px;
   /* 🔥 MULT mai mic */
   backdrop-filter: blur(6px);
+
+
+  position: relative;   /* 🔥 ADAUGI */
+  overflow: hidden;     /* 🔥 ADAUGI */
+
+}
+
+
+.footer::before {
+  content: "";
+  position: absolute;
+
+  left: 20px;
+  top: 50%;
+  transform: translateY(-40%); /* 🔥 centru vertical REAL */
+
+  width: 180px;
+  height: 180px;
+
+  background-image: url("poze/scrisul3.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/*ANIMATIE FOOTER*/
+.footer::before {
+  animation: footerPulse 6s ease-in-out infinite;
+}
+@keyframes footerPulse {
+  0% {
+    transform: translateY(-40%) scale(1);
+  }
+  50% {
+    transform: translateY(-40%) scale(1.05);
+  }
+  100% {
+    transform: translateY(-40%) scale(1);
+  }
+}
+
+
+
+
+.footer * {
+  position: relative;
+  z-index: 1;
 }
 
 /* LINIE AURIE */
@@ -815,9 +827,18 @@ h2 {
   color: white;
   transition: 0.3s;
 }
+.footer-social a {
+  transition: 0.3s;
+}
+
+.footer-social a:hover {
+  transform: translateY(-2px) scale(1.1);
+  color: #ffd700;
+}
 
 .footer-social a:hover {
   color: #e0b973;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.7);
 }
 
 /* COPYRIGHT */
@@ -830,24 +851,68 @@ h2 {
 }
 
 
-/* 🔥SCRISUL GEN BANNER */
-@media (max-width: 768px) {
-  .hero-logo img {
-    width: 140px;
-  }
+
+.footer,
+.footer-logo,
+.footer-col p,
+.footer-copy,
+.footer-by {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 
-/* 🔥 MOBILE FIX IMPORTANT */
+
+/* ========================= */
+/* 🔥 RESPONSIVE CLEAN */
+/* ========================= */
+
+/* 📱 MOBILE */
 @media (max-width: 768px) {
+
+  .hero {
+    min-height: 75svh !important;
+    height: 75svh !important;
+  }
+
+  .hero-logo {
+    margin-bottom: -20px;
+  }
+
+  .hero-logo img {
+    width: 75vw;
+  }
+
+  .cta-btn {
+    width: 100%;
+  }
+
+  /* CARDS SCROLL */
+  .cards-wrapper {
+    overflow: hidden;
+  }
+
+  .cards-container {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 16px;
+    overflow-x: auto;
+    padding: 20px 0;
+  }
+
+  .cards-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card {
+    flex: 0 0 85%;
+    max-width: 85%;
+  }
+
+  /* FOOTER MOBILE */
   .footer-container {
     flex-direction: column;
-    gap: 6px;
-    /* 🔥 FOARTE compact */
+    gap: 4px;
   }
-}
-
-@media (max-width: 768px) {
 
   .footer {
     padding: 12px 10px 6px;
@@ -855,11 +920,6 @@ h2 {
 
   .footer-top-line {
     margin-bottom: 6px;
-  }
-
-  .footer-container {
-    gap: 4px;
-    /* 🔥 suprascrie 6px */
   }
 
   .footer-logo {
@@ -883,15 +943,38 @@ h2 {
     margin-top: 4px;
     font-size: 9px;
   }
-
 }
 
-.footer,
-.footer-logo,
-.footer-col p,
-.footer-copy,
-.footer-by {
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+
+/* 💻 TABLETĂ */
+@media (max-width: 1024px) {
+
+  .hero {
+    min-height: 70svh;
+    background-position: center 20%;
+  }
+
+  .hero-logo img {
+    width: clamp(260px, 50vw, 500px);
+  }
+}
+
+
+
+
+
+/* 🖥️ DESKTOP */
+@media (min-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cta {
+    background-size: 100%;
+    background-position: center 25%;
+  }
 }
 
 
