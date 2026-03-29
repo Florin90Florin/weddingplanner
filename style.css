@@ -972,7 +972,7 @@ h2 {
 }
 
 .footer::before {
-  left: -45px;
+  left: -40px;
   /* 🔥 împinge mai în afară */
   width: 160px;
   height: 160px;
