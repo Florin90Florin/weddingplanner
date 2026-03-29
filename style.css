@@ -712,14 +712,13 @@ h2 {
 }
 
 /*ACEEASI CULOARE LA ICONITE PE TOATE DEVICES*/
-.footer .fa-phone { 
-  color: #ff4d6d;
+.footer .fa-phone {
+  color: #ff4d6d !important;
 }
 
 .footer .fa-envelope {
-  color: #e0b973;
+  color: #e0b973 !important;
 }
-
 
 .footer::before {
   content: "";
