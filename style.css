@@ -844,6 +844,17 @@ h2 {
   opacity: 0.85;
 }
 
+.footer-col i {
+  color: inherit;
+}
+.footer-col i.fa-phone {
+  color: #ff4d6d;
+}
+
+.footer-col i.fa-envelope {
+  color: #e0b973;
+}
+
 /* SOCIAL */
 .footer-social a {
   margin: 0 5px;
@@ -858,13 +869,10 @@ h2 {
 
 .footer-social a:hover {
   transform: translateY(-2px) scale(1.1);
-  color: #ffd700;
-}
-
-.footer-social a:hover {
   color: #e0b973;
   text-shadow: 0 0 8px rgba(255, 215, 0, 0.7);
 }
+
 
 /* COPYRIGHT */
 .footer-copy {
