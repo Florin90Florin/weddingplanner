@@ -944,6 +944,11 @@ h2 {
     font-size: 9px;
   }
 }
+.footer::before {
+  left: -30px; /* 🔥 împinge mai în afară */
+  width: 160px;
+  height: 160px;
+}
 
 
 /* 💻 TABLETĂ */
