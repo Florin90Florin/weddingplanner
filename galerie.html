@@ -1,209 +1,209 @@
 <!DOCTYPE html>
 <html lang="ro">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Galerie Foto</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galerie Foto</title>
 
-<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 
-<style>
+  <style>
+    /* HEADER */
+    .gallery-header {
+      padding: 20px;
+      text-align: center;
+    }
 
-/* HEADER */
-.gallery-header {
-  padding: 20px;
-  text-align: center;
-}
+    .back-btn {
+      display: inline-block;
+      margin-bottom: 10px;
+      text-decoration: none;
+      color: #d4a373;
+      font-weight: 600;
+    }
 
-.back-btn {
-  display: inline-block;
-  margin-bottom: 10px;
-  text-decoration: none;
-  color: #d4a373;
-  font-weight: 600;
-}
+    /* TITLE */
+    .gallery-header h1 {
+      font-size: 26px;
+      font-family: 'Playfair Display', serif;
+    }
 
-/* TITLE */
-.gallery-header h1 {
-  font-size: 26px;
-  font-family: 'Playfair Display', serif;
-}
+    /* GRID */
+    .full-gallery {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
 
-/* GRID */
-.full-gallery {
-  padding: 20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
+    /* ITEM */
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      cursor: pointer;
+    }
 
-/* ITEM */
-.gallery-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-  cursor: pointer;
-}
+    /* IMAGE */
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
 
-/* IMAGE */
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
+    /* ZOOM */
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
 
-/* ZOOM */
-.gallery-item:hover img {
-  transform: scale(1.08);
-}
+    /* OVERLAY */
+    .gallery-item::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      transition: 0.4s ease;
+      pointer-events: none;
+    }
 
-/* OVERLAY */
-.gallery-item::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.2);
-  opacity: 0;
-  transition: 0.4s ease;
-  pointer-events: none;
-}
+    .gallery-item:hover::after {
+      opacity: 1;
+    }
 
-.gallery-item:hover::after {
-  opacity: 1;
-}
-
-/* DESKTOP */
-@media (min-width: 768px) {
-  .full-gallery {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-</style>
+    /* DESKTOP */
+    @media (min-width: 768px) {
+      .full-gallery {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+  </style>
 
 </head>
 
 <body>
 
 
-<div class="gallery-wrapper">
-  <div class="gallery-container">
-<div class="gallery-header">
-  <a href="index.html" class="back-btn">← Înapoi</a>
-  <h1>Galerie foto</h1>
-</div>
+  <div class="gallery-wrapper">
+    <div class="gallery-container">
+      <div class="gallery-header">
+        <a href="index.html" class="back-btn">← Înapoi</a>
+        <h1>Galerie foto</h1>
+      </div>
 
-<div class="full-gallery">
+      <div class="full-gallery">
 
-  <div class="gallery-item">
-    <img src="img1.jpg" onclick="openLightbox(this)">
+        <div class="gallery-item">
+          <img src="img1.jpg" onclick="openLightbox(this)">
+        </div>
+
+        <div class="gallery-item">
+          <img src="img2.jpg" onclick="openLightbox(this)">
+        </div>
+
+        <div class="gallery-item">
+          <img src="img3.jpg" onclick="openLightbox(this)">
+        </div>
+
+        <div class="gallery-item">
+          <img src="img4.jpg" onclick="openLightbox(this)">
+        </div>
+
+        <div class="gallery-item">
+          <img src="img5.jpg" onclick="openLightbox(this)">
+        </div>
+
+        <div class="gallery-item">
+          <img src="img6.jpg" onclick="openLightbox(this)">
+        </div>
+
+        <div class="gallery-item">
+          <img src="img7.jpg" onclick="openLightbox(this)">
+        </div>
+
+        <div class="gallery-item">
+          <img src="poze/fundal.jpg" onclick="openLightbox(this)">
+        </div>
+
+        <!-- POZA VERTICALĂ -->
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200" onclick="openLightbox(this)">
+        </div>
+
+      </div>
+    </div>
   </div>
 
-  <div class="gallery-item">
-    <img src="img2.jpg" onclick="openLightbox(this)">
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox">
+    <span class="close-lightbox" onclick="closeLightbox()">✖</span>
+    <span class="prev" onclick="changeSlide(-1)">❮</span>
+    <img id="lightbox-img">
+    <span class="next" onclick="changeSlide(1)">❯</span>
   </div>
 
-  <div class="gallery-item">
-    <img src="img3.jpg" onclick="openLightbox(this)">
-  </div>
+  <script>
+    let currentIndex = 0;
+    let images = [];
 
-  <div class="gallery-item">
-    <img src="img4.jpg" onclick="openLightbox(this)">
-  </div>
+    function openLightbox(img) {
+      images = Array.from(document.querySelectorAll(".gallery-item img")); // 🔥 FIX FINAL
+      currentIndex = images.indexOf(img);
 
-  <div class="gallery-item">
-    <img src="img5.jpg" onclick="openLightbox(this)">
-  </div>
+      document.getElementById("lightbox").style.display = "flex";
+      document.getElementById("lightbox-img").src = img.src;
+    }
 
-  <div class="gallery-item">
-    <img src="img6.jpg" onclick="openLightbox(this)">
-  </div>
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+    }
 
-  <div class="gallery-item">
-    <img src="img7.jpg" onclick="openLightbox(this)">
-  </div>
+    function changeSlide(direction) {
+      currentIndex += direction;
 
-  <div class="gallery-item">
-    <img src="poze/fundal.jpg" onclick="openLightbox(this)">
-  </div>
+      if (currentIndex < 0) currentIndex = images.length - 1;
+      if (currentIndex >= images.length) currentIndex = 0;
 
-  <!-- POZA VERTICALĂ -->
-  <div class="gallery-item">
-    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200" onclick="openLightbox(this)">
-  </div>
-
-</div>
- </div>
-</div>
-
-<!-- LIGHTBOX -->
-<div id="lightbox" class="lightbox">
-  <span class="close-lightbox" onclick="closeLightbox()">✖</span>
-  <span class="prev" onclick="changeSlide(-1)">❮</span>
-  <img id="lightbox-img">
-  <span class="next" onclick="changeSlide(1)">❯</span>
-</div>
-
-<script>
-let currentIndex = 0;
-let images = [];
-
-function openLightbox(img) {
-  images = Array.from(document.querySelectorAll(".gallery-item img")); // 🔥 FIX FINAL
-  currentIndex = images.indexOf(img);
-
-  document.getElementById("lightbox").style.display = "flex";
-  document.getElementById("lightbox-img").src = img.src;
-}
-
-function closeLightbox() {
-  document.getElementById("lightbox").style.display = "none";
-}
-
-function changeSlide(direction) {
-  currentIndex += direction;
-
-  if (currentIndex < 0) currentIndex = images.length - 1;
-  if (currentIndex >= images.length) currentIndex = 0;
-
-  document.getElementById("lightbox-img").src = images[currentIndex].src;
-}
-</script>
+      document.getElementById("lightbox-img").src = images[currentIndex].src;
+    }
+  </script>
 
 
-<footer class="footer">
+  <footer class="footer">
 
-  <div class="footer-top-line"></div>
+    <div class="footer-top-line"></div>
 
-  <div class="footer-container">
+    <div class="footer-container">
 
-    <!-- LOGO -->
-    <div class="footer-col">
-      <h2 class="footer-logo">Golden Elysium</h2>
-      <p class="footer-by">by Ramona Davitoiu</p>
+      <!-- LOGO -->
+      <div class="footer-col">
+        <h2 class="footer-logo">Golden Elysium</h2>
+        <p class="footer-by">by Ramona Davitoiu</p>
+      </div>
+
+      <!-- CONTACT -->
+      <div class="footer-col">
+        <p><i class="fa-solid fa-phone"></i> 0763 621 719</p>
+        <p><i class="fa-solid fa-envelope"></i> ramonadavitoiu@yahoo.com</p>
+      </div>
+
+      <!-- SOCIAL -->
+      <div class="footer-col footer-social">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+
     </div>
 
-    <!-- CONTACT -->
-    <div class="footer-col">
-      <p>📞 0763 621 719</p>
-      <p>✉ ramonadavitoiu@yahoo.com</p>
-    </div>
+    <p class="footer-copy">
+      © 2026 Golden Elysium
+    </p>
 
-    <!-- SOCIAL -->
-    <div class="footer-col footer-social">
-      <a href="#"><i class="fa-brands fa-instagram"></i></a>
-      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-      <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-    </div>
-
-  </div>
-
-  <p class="footer-copy">
-    © 2026 Golden Elysium
-  </p>
-
-</footer>
+  </footer>
 
 </body>
+
 </html>
