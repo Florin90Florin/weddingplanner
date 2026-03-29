@@ -1035,3 +1035,12 @@ h2 {
     box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
   }
 }
+
+/*pt telefon logo */
+@media (max-width: 768px) {
+  .footer::before {
+    left: -5px !important;
+    width: 110px !important;
+    height: 110px !important;
+  }
+}
