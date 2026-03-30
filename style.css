@@ -563,6 +563,7 @@ h2 {
     bottom: 120px;
   }
 }
+
 /* POPUP */
 .popup {
   position: fixed;
@@ -844,6 +845,7 @@ h2 {
 .footer-col i.fa-envelope {
   color: #e0b973;
 }
+
 .footer i {
   margin-right: 6px;
 }
@@ -971,12 +973,7 @@ h2 {
   }
 }
 
-.footer::before {
-  left: -45px;
-  /* 🔥 împinge mai în afară */
-  width: 110px;
-  height: 110px;
-}
+
 
 
 /* 💻 TABLETĂ */
@@ -990,13 +987,16 @@ h2 {
   .hero-logo img {
     width: clamp(260px, 50vw, 500px);
   }
-}
 
-.footer::before {
-  left: 40px;
-  /* 🔥 mai spre dreapta */
-  width: 180px;
-  height: 180px;
+  /* 🔥 FIX FOOTER TABLET */
+  .footer::before {
+    left: auto !important;
+    right: 20px !important;
+
+    width: 160px;
+    height: 160px;
+  }
+
 }
 
 
