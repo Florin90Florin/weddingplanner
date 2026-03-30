@@ -984,7 +984,7 @@ h2 {
 
 
 /* 💻 TABLETĂ */
-@media (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1024px) {
 
   .hero {
     min-height: 70svh;
@@ -997,8 +997,8 @@ h2 {
 
   /* 🔥 FIX FOOTER TABLET */
   .footer::before {
-    left: auto !important;
-    right: 20px !important;
+    left: auto;
+    right: 20px;
 
     width: 160px;
     height: 160px;
