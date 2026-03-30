@@ -717,7 +717,7 @@ h2 {
   content: "";
   position: absolute;
 
-  left: 20px;
+  left: 50px;
   top: 50%;
   transform: translateY(-40%);
   /* 🔥 centru vertical REAL */
@@ -890,158 +890,158 @@ h2 {
 
 
 
-/* ========================= */
-/* 🔥 RESPONSIVE CLEAN */
-/* ========================= */
+  /* ========================= */
+  /* 🔥 RESPONSIVE CLEAN */
+  /* ========================= */
 
-/* 📱 MOBILE */
-@media (max-width: 768px) {
+  /* 📱 MOBILE */
+  @media (max-width: 768px) {
 
-  .hero {
-    min-height: 75svh !important;
-    height: 75svh !important;
+    .hero {
+      min-height: 75svh !important;
+      height: 75svh !important;
+    }
+
+    .hero-logo {
+      margin-bottom: -20px;
+    }
+
+    .hero-logo img {
+      width: 75vw;
+    }
+
+    .cta-btn {
+      width: 100%;
+    }
+
+    /* CARDS SCROLL */
+    .cards-wrapper {
+      overflow: hidden;
+    }
+
+    .cards-container {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 16px;
+      overflow-x: auto;
+      padding: 20px 0;
+    }
+
+    .cards-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .card {
+      flex: 0 0 85%;
+      max-width: 85%;
+    }
+
+    /* FOOTER MOBILE */
+    .footer-container {
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .footer {
+      padding: 12px 10px 6px;
+    }
+
+    .footer-top-line {
+      margin-bottom: 6px;
+    }
+
+    .footer-logo {
+      font-size: 14px;
+    }
+
+    .footer-by {
+      font-size: 10px;
+    }
+
+    .footer-col p {
+      font-size: 11px;
+      margin: 0;
+    }
+
+    .footer-social a {
+      font-size: 14px;
+    }
+
+    .footer-copy {
+      margin-top: 4px;
+      font-size: 9px;
+    }
   }
 
-  .hero-logo {
-    margin-bottom: -20px;
+
+
+
+  /* 💻 TABLETĂ */
+  @media (max-width: 1024px) {
+
+    .hero {
+      min-height: 70svh;
+      background-position: center 20%;
+    }
+
+    .hero-logo img {
+      width: clamp(260px, 50vw, 500px);
+    }
+
+    /* 🔥 FIX FOOTER TABLET */
+    .footer::before {
+      left: auto !important;
+      right: 20px !important;
+
+      width: 160px;
+      height: 160px;
+    }
+
   }
 
-  .hero-logo img {
-    width: 75vw;
+
+
+
+  /* 🖥️ DESKTOP */
+  @media (min-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 
-  .cta-btn {
-    width: 100%;
+  @media (min-width: 1024px) {
+    .cta {
+      background-size: 100%;
+      background-position: center 25%;
+    }
   }
 
-  /* CARDS SCROLL */
-  .cards-wrapper {
-    overflow: hidden;
+
+
+
+  /* PULSE ANIMATION */
+  @keyframes whatsappPulse {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+    }
+
+    70% {
+      transform: scale(1.1);
+      box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+    }
+
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
   }
 
-  .cards-container {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 16px;
-    overflow-x: auto;
-    padding: 20px 0;
+  /*pt telefon logo */
+  @media (max-width: 768px) {
+    .footer::before {
+      left: -5px !important;
+      width: 110px !important;
+      height: 110px !important;
+    }
   }
-
-  .cards-container::-webkit-scrollbar {
-    display: none;
-  }
-
-  .card {
-    flex: 0 0 85%;
-    max-width: 85%;
-  }
-
-  /* FOOTER MOBILE */
-  .footer-container {
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .footer {
-    padding: 12px 10px 6px;
-  }
-
-  .footer-top-line {
-    margin-bottom: 6px;
-  }
-
-  .footer-logo {
-    font-size: 14px;
-  }
-
-  .footer-by {
-    font-size: 10px;
-  }
-
-  .footer-col p {
-    font-size: 11px;
-    margin: 0;
-  }
-
-  .footer-social a {
-    font-size: 14px;
-  }
-
-  .footer-copy {
-    margin-top: 4px;
-    font-size: 9px;
-  }
-}
-
-
-
-
-/* 💻 TABLETĂ */
-@media (max-width: 1024px) {
-
-  .hero {
-    min-height: 70svh;
-    background-position: center 20%;
-  }
-
-  .hero-logo img {
-    width: clamp(260px, 50vw, 500px);
-  }
-
-  /* 🔥 FIX FOOTER TABLET */
-  .footer::before {
-    left: auto !important;
-    right: 20px !important;
-
-    width: 160px;
-    height: 160px;
-  }
-
-}
-
-
-
-
-/* 🖥️ DESKTOP */
-@media (min-width: 768px) {
-  .contact-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (min-width: 1024px) {
-  .cta {
-    background-size: 100%;
-    background-position: center 25%;
-  }
-}
-
-
-
-
-/* PULSE ANIMATION */
-@keyframes whatsappPulse {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
-  }
-
-  70% {
-    transform: scale(1.1);
-    box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
-  }
-
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-  }
-}
-
-/*pt telefon logo */
-@media (max-width: 768px) {
-  .footer::before {
-    left: -5px !important;
-    width: 110px !important;
-    height: 110px !important;
-  }
-}
