@@ -64,36 +64,42 @@
 
   </section>
 
+
   <section class="extra-services">
-    
-    <h2 class="experience-title">
+
+    <h2 class="experience-title reveal">
       Creăm experiențe, nu doar <span>evenimente</span>
     </h2>
 
     <div class="cards-wrapper">
       <div class="cards-container">
 
-        <div class="card">
+        <div class="card reveal reveal-delay-1">
           <h3>Botezuri</h3>
           <p>Creăm un eveniment elegant și bine organizat, adaptat stilului și dorințelor tale.</p>
         </div>
 
-        <div class="card">
+        <div class="card reveal reveal-delay-2">
           <h3>Majorate</h3>
           <p>Planificăm petreceri memorabile, moderne și atent coordonate.</p>
         </div>
 
-        <div class="card">
+        <div class="card reveal reveal-delay-3">
           <h3>Zile de naștere</h3>
           <p>Fiecare detaliu este gândit pentru o experiență relaxată și specială.</p>
         </div>
 
-        <div class="card">
+        <div class="card reveal reveal-delay-4">
           <h3>Evenimente corporate</h3>
           <p>Organizare profesionistă pentru evenimente business impecabile.</p>
         </div>
 
       </div>
+
+      <p class="experience-note reveal reveal-delay-4">
+        Hai să transformăm evenimentul tău într-o experiență memorabilă.
+      </p>
+
     </div>
   </section>
 
@@ -437,6 +443,26 @@ Aștept confirmarea. Mulțumesc!`;
     </p>
 
   </footer>
+
+
+  <script>
+    const reveals = document.querySelectorAll(".reveal");
+
+    function revealOnScroll() {
+      const windowHeight = window.innerHeight;
+
+      reveals.forEach(el => {
+        const elementTop = el.getBoundingClientRect().top;
+
+        if (elementTop < windowHeight - 80) {
+          el.classList.add("active");
+        }
+      });
+    }
+
+    window.addEventListener("scroll", revealOnScroll);
+  </script>
+
 
 </body>
 
