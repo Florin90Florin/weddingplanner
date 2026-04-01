@@ -1,502 +1,495 @@
-<!DOCTYPE html>
-<html lang="ro">
+  <!DOCTYPE html>
+  <html lang="ro">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wedding Planner</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Planner</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  </head>
 
-<body>
-  <header class="hero">
-    <div class="hero-content">
+  <body>
+    <header class="hero">
+      <div class="hero-content">
 
-      <div class="hero-logo">
-        <img src="poze/scrisul3.png" alt="Golden Elysium">
-      </div>
-
-      <h1 class="hero-title">
-        Nunta ta.<br>
-        <span class="gold-text">Perfect organizată</span>
-      </h1>
-
-      <p class="hero-sub">
-        Tu trăiești momentul. Noi ne ocupăm de tot.
-      </p>
-
-      <button class="btn hero-btn" onclick="openCalendar()">
-        Programează o discuție
-      </button>
-
-      <div class="hero-badges">
-        ✔ Disponibilitate limitată &nbsp;&nbsp; ✔ Răspuns rapid
-      </div>
-
-    </div>
-  </header>
-
-  <section>
-    <h2>Serviciile noastre</h2>
-
-    <div class="cards-wrapper">
-      <div class="cards-container">
-
-        <div class="card">
-          <h3>Organizare completă</h3>
-          <p>Gestionăm fiecare detaliu al nunții tale, de la concept până la execuție impecabilă.</p>
+        <div class="hero-logo">
+          <img src="poze/scrisul3.png" alt="Golden Elysium">
         </div>
 
-        <div class="card">
-          <h3>Coordonare în ziua nunții</h3>
-          <p>Ne asigurăm că totul decurge perfect, astfel încât tu să te bucuri de fiecare moment.</p>
-        </div>
+        <h1 class="hero-title">
+          Nunta ta.<br>
+          <span class="gold-text">Perfect organizată</span>
+        </h1>
 
-        <div class="card">
-          <h3>Consultanță personalizată</h3>
-          <p>Îți oferim ghidare profesională pentru a lua cele mai bune decizii.</p>
+        <p class="hero-sub">
+          Tu trăiești momentul. Noi ne ocupăm de tot.
+        </p>
+
+        <button class="btn hero-btn" onclick="openCalendar()">
+          Programează o discuție
+        </button>
+
+        <div class="hero-badges">
+          ✔ Disponibilitate limitată &nbsp;&nbsp; ✔ Răspuns rapid
         </div>
 
       </div>
-    </div>
+    </header>
 
-  </section>
+    <section>
+      <h2>Serviciile noastre</h2>
 
+      <div class="cards-wrapper">
+        <div class="cards-container">
 
-  <section class="extra-services">
+          <div class="card">
+            <h3>Organizare completă</h3>
+            <p>Gestionăm fiecare detaliu al nunții tale, de la concept până la execuție impecabilă.</p>
+          </div>
 
-    <h2 class="experience-title reveal">
-      Creăm experiențe, nu doar <span>evenimente</span>
-    </h2>
+          <div class="card">
+            <h3>Coordonare în ziua nunții</h3>
+            <p>Ne asigurăm că totul decurge perfect, astfel încât tu să te bucuri de fiecare moment.</p>
+          </div>
 
-    <div class="cards-wrapper">
-      <div class="cards-container">
+          <div class="card">
+            <h3>Consultanță personalizată</h3>
+            <p>Îți oferim ghidare profesională pentru a lua cele mai bune decizii.</p>
+          </div>
 
-        <div class="card reveal reveal-delay-1">
-          <h3>Botezuri</h3>
-          <p>Creăm un eveniment elegant și bine organizat, adaptat stilului și dorințelor tale.</p>
         </div>
-
-        <div class="card reveal reveal-delay-2">
-          <h3>Majorate</h3>
-          <p>Planificăm petreceri memorabile, moderne și atent coordonate.</p>
-        </div>
-
-        <div class="card reveal reveal-delay-3">
-          <h3>Zile de naștere</h3>
-          <p>Fiecare detaliu este gândit pentru o experiență relaxată și specială.</p>
-        </div>
-
-        <div class="card reveal reveal-delay-4">
-          <h3>Evenimente corporate</h3>
-          <p>Organizare profesionistă pentru evenimente business impecabile.</p>
-        </div>
-
       </div>
 
-      <p class="experience-note reveal reveal-delay-4">
-        Hai să transformăm evenimentul tău într-o experiență memorabilă.
-      </p>
-
-    </div>
-  </section>
-
-  <section class="extra-cta">
-    <h2>Ai un alt tip de eveniment în minte?</h2>
-
-    <p>
-      Spune-ne ideea ta, iar noi o transformăm într-un eveniment organizat impecabil
-    </p>
-
-    <button class="btn cta-btn" onclick="openCalendar()">
-      Discută cu noi
-    </button>
-  </section>
-
-  <section class="why">
-    <h2>De ce să ne alegi?</h2>
-
-    <div class="why-item">
-      <span>✔</span>
-      <p>Experiență reală în organizarea evenimentelor</p>
-    </div>
-
-    <div class="why-item">
-      <span>✔</span>
-      <p>Calm și control în orice situație</p>
-    </div>
-
-    <div class="why-item">
-      <span>✔</span>
-      <p>Atenție la fiecare detaliu</p>
-    </div>
-
-    <div class="why-item">
-      <span>✔</span>
-      <p>Colaboratori atent selectați</p>
-    </div>
-  </section>
-
-  <section class="about">
-
-    <div class="about-content">
-
-      <h2>Despre noi</h2>
-
-      <p class="about-text">
-        Credem că fiecare nuntă trebuie să spună o poveste. De aceea, tratăm fiecare eveniment cu atenție la detalii,
-        organizare impecabilă și o abordare personalizată.
-      </p>
-
-      <p class="about-text">
-        Nu este vorba doar despre planificare, ci despre crearea unei experiențe complete, în care tu te bucuri de
-        fiecare moment,
-        iar noi ne ocupăm de tot.
-      </p>
-
-      <div class="about-highlights">
-
-        <div class="highlight">
-          <span>✔</span>
-          <p>Organizare fără stres</p>
-        </div>
-
-        <div class="highlight">
-          <span>✔</span>
-          <p>Furnizori verificați</p>
-        </div>
-
-        <div class="highlight">
-          <span>✔</span>
-          <p>Atenție la detalii</p>
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
+    </section>
 
 
-  <section class="gallery-section">
-    <h2>Momente reale</h2>
+    <section class="extra-services">
 
-    <div class="gallery">
-
-      <div class="gallery-item">
-        <img src="poze/nunta (2).jpg" onclick="openLightbox(this)">
-      </div>
-
-      <div class="gallery-item">
-        <img src="poze/NUNTA1.jpg" onclick="openLightbox(this)">
-      </div>
-
-      <div class="gallery-item">
-        <img src="img3.jpg" onclick="openLightbox(this)">
-      </div>
-
-      <div class="gallery-item">
-        <img src="img4.jpg" onclick="openLightbox(this)">
-      </div>
-
-
-
-
-      <!-- pentru pozele verticale  -->
-      <div class="gallery-item portrait">
-        <img src="img6.jpg" onclick="openLightbox(this)">
-      </div>
-
-
-
-    </div>
-    <a href="galerie.html" class="gallery-more">
-      Vezi întreaga galerie →
-    </a>
-  </section>
-
-  <section class="cta">
-    <div class="cta-content">
-
-      <h2>
-        Începe planificarea nunții tale<br>
-        <span>fără stres și fără compromisuri</span>
+      <h2 class="experience-title reveal">
+        Creăm experiențe, nu doar <span>evenimente</span>
       </h2>
 
+      <div class="cards-wrapper">
+        <div class="cards-container">
+
+          <div class="card reveal reveal-delay-1">
+            <h3>Botezuri</h3>
+            <p>Creăm un eveniment elegant și bine organizat, adaptat stilului și dorințelor tale.</p>
+          </div>
+
+          <div class="card reveal reveal-delay-2">
+            <h3>Majorate</h3>
+            <p>Planificăm petreceri memorabile, moderne și atent coordonate.</p>
+          </div>
+
+          <div class="card reveal reveal-delay-3">
+            <h3>Zile de naștere</h3>
+            <p>Fiecare detaliu este gândit pentru o experiență relaxată și specială.</p>
+          </div>
+
+          <div class="card reveal reveal-delay-4">
+            <h3>Evenimente corporate</h3>
+            <p>Organizare profesionistă pentru evenimente business impecabile.</p>
+          </div>
+
+        </div>
+
+        <p class="experience-note reveal reveal-delay-4">
+          Hai să transformăm evenimentul tău într-o experiență memorabilă.
+        </p>
+
+      </div>
+    </section>
+
+    <section class="extra-cta">
+      <h2>Ai un alt tip de eveniment în minte?</h2>
+
       <p>
-        Discutăm ideile tale, îți oferim direcția potrivită și transformăm totul într-un eveniment memorabil
+        Spune-ne ideea ta, iar noi o transformăm într-un eveniment organizat impecabil
       </p>
 
       <button class="btn cta-btn" onclick="openCalendar()">
-        Programează o discuție
+        Discută cu noi
       </button>
+    </section>
 
-      <div class="cta-note">
+    <section class="why">
+      <h2>De ce să ne alegi?</h2>
 
-        ✔ Răspundem rapid &nbsp;&nbsp; ✔ Stabilim împreună detaliile
+      <div class="why-item">
+        <span>✔</span>
+        <p>Experiență reală în organizarea evenimentelor</p>
       </div>
 
-    </div>
-  </section>
+      <div class="why-item">
+        <span>✔</span>
+        <p>Calm și control în orice situație</p>
+      </div>
 
-  <section id="contact" class="contact">
+      <div class="why-item">
+        <span>✔</span>
+        <p>Atenție la fiecare detaliu</p>
+      </div>
 
-    <h2>Hai să discutăm despre evenimentul tău</h2>
-    <p class="contact-sub">
-      Scrie-ne direct sau programează o discuție rapidă
-    </p>
+      <div class="why-item">
+        <span>✔</span>
+        <p>Colaboratori atent selectați</p>
+      </div>
+    </section>
 
-    <div class="contact-grid">
+    <section class="about">
 
-      <!-- SOCIAL -->
-      <div class="contact-box social-box">
+      <div class="about-content">
 
-        <h3>Urmărește-ne</h3>
+        <h2>Despre noi</h2>
 
-        <div class="social-buttons">
+        <p class="about-text">
+          Credem că fiecare nuntă trebuie să spună o poveste. De aceea, tratăm fiecare eveniment cu atenție la detalii,
+          organizare impecabilă și o abordare personalizată.
+        </p>
 
-          <a href="https://instagram.com/USERNAME" target="_blank" class="social insta">
-            <i class="fa-brands fa-instagram"></i>
-            <span>Instagram</span>
-          </a>
+        <p class="about-text">
+          Nu este vorba doar despre planificare, ci despre crearea unei experiențe complete, în care tu te bucuri de
+          fiecare moment,
+          iar noi ne ocupăm de tot.
+        </p>
 
-          <a href="https://facebook.com/USERNAME" target="_blank" class="social fb">
-            <i class="fa-brands fa-facebook-f"></i>
-            <span>Facebook</span>
-          </a>
+        <div class="about-highlights">
 
-          <a href="https://tiktok.com/@USERNAME" target="_blank" class="social tiktok">
-            <i class="fa-brands fa-tiktok"></i>
-            <span>TikTok</span>
-          </a>
+          <div class="highlight">
+            <span>✔</span>
+            <p>Organizare fără stres</p>
+          </div>
+
+          <div class="highlight">
+            <span>✔</span>
+            <p>Furnizori verificați</p>
+          </div>
+
+          <div class="highlight">
+            <span>✔</span>
+            <p>Atenție la detalii</p>
+          </div>
 
         </div>
+
       </div>
 
-      <!-- CTA DIRECT -->
-      <div class="contact-box cta-box">
+    </section>
+
+
+    <section class="gallery-section">
+      <h2>Momente reale</h2>
+
+      <div class="gallery">
+
+        <div class="gallery-item">
+          <img src="poze/nunta (2).jpg" onclick="openLightbox(this)">
+        </div>
+
+        <div class="gallery-item">
+          <img src="poze/NUNTA1.jpg" onclick="openLightbox(this)">
+        </div>
+
+        <div class="gallery-item">
+          <img src="img3.jpg" onclick="openLightbox(this)">
+        </div>
+
+        <div class="gallery-item">
+          <img src="img4.jpg" onclick="openLightbox(this)">
+        </div>
+
+
+
+
+        <!-- pentru pozele verticale  -->
+        <div class="gallery-item portrait">
+          <img src="img6.jpg" onclick="openLightbox(this)">
+        </div>
+
+
+
+      </div>
+      <a href="galerie.html" class="gallery-more">
+        Vezi întreaga galerie →
+      </a>
+    </section>
+
+    <section class="cta">
+      <div class="cta-content">
+
+        <h2>
+          Începe planificarea nunții tale<br>
+          <span>fără stres și fără compromisuri</span>
+        </h2>
+
+        <p>
+          Discutăm ideile tale, îți oferim direcția potrivită și transformăm totul într-un eveniment memorabil
+        </p>
+
+        <button class="btn cta-btn" onclick="openCalendar()">
+          Programează o discuție
+        </button>
+
+        <div class="cta-note">
+
+          ✔ Răspundem rapid &nbsp;&nbsp; ✔ Stabilim împreună detaliile
+        </div>
+
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+
+      <h2>Hai să discutăm despre evenimentul tău</h2>
+      <p class="contact-sub">
+        Scrie-ne direct sau programează o discuție rapidă
+      </p>
+
+      <div class="contact-grid">
+
+        <!-- SOCIAL -->
+        <div class="contact-box social-box">
+
+          <h3>Urmărește-ne</h3>
+
+          <div class="social-buttons">
+
+            <a href="https://instagram.com/USERNAME" target="_blank" class="social insta">
+              <i class="fa-brands fa-instagram"></i>
+              <span>Instagram</span>
+            </a>
+
+            <a href="https://facebook.com/USERNAME" target="_blank" class="social fb">
+              <i class="fa-brands fa-facebook-f"></i>
+              <span>Facebook</span>
+            </a>
+
+            <a href="https://tiktok.com/@USERNAME" target="_blank" class="social tiktok">
+              <i class="fa-brands fa-tiktok"></i>
+              <span>TikTok</span>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- CTA DIRECT -->
+        <div class="contact-box cta-box">
+
+          <h3>Programează o discuție</h3>
+
+          <p>
+            Stabilim împreună direcția evenimentului și îți oferim soluțiile potrivite
+          </p>
+
+          <button class="btn contact-btn" onclick="openCalendar()">
+            Programează acum
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- WHATSAPP FLOAT -->
+    <!-- WHATSAPP FLOAT -->
+    <a href="https://wa.me/40763621719" class="whatsapp" target="_blank">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- POPUP -->
+    <div id="calendarPopup" class="popup" onclick="outsideClick(event)">
+      <div class="popup-content">
+
+        <button onclick="closeCalendar()" class="close-btn">✖</button>
 
         <h3>Programează o discuție</h3>
 
-        <p>
-          Stabilim împreună direcția evenimentului și îți oferim soluțiile potrivite
-        </p>
+        <label>Numele tău</label>
+        <input type="text" id="name" placeholder="Ex: Andrei Popescu">
 
-        <button class="btn contact-btn" onclick="openCalendar()">
-          Programează acum
-        </button>
+        <label>Alege data</label>
+        <input type="date" id="datePicker">
+
+        <label>Alege ora</label>
+        <select id="timePicker">
+          <option value="">Selectează ora</option>
+          <option>10:00</option>
+          <option>11:00</option>
+          <option>12:00</option>
+          <option>13:00</option>
+          <option>14:00</option>
+          <option>15:00</option>
+          <option>16:00</option>
+          <option>17:00</option>
+          <option>18:00</option>
+        </select>
+
+        <button onclick="sendWhatsApp()" class="btn">Confirmă</button>
 
       </div>
-
     </div>
 
-  </section>
+    <!-- SCRIPT FINAL -->
+    <script>
+      function openCalendar() {
+        document.getElementById("calendarPopup").style.display = "flex";
 
-  <!-- WHATSAPP FLOAT -->
-  <!-- WHATSAPP FLOAT -->
-  <a href="https://wa.me/40763621719" class="whatsapp" target="_blank">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
-
-  <!-- POPUP -->
-  <div id="calendarPopup" class="popup" onclick="outsideClick(event)">
-    <div class="popup-content">
-
-      <button onclick="closeCalendar()" class="close-btn">✖</button>
-
-      <h3>Programează o discuție</h3>
-
-      <label>Numele tău</label>
-      <input type="text" id="name" placeholder="Ex: Andrei Popescu">
-
-      <label>Alege data</label>
-      <input type="date" id="datePicker">
-
-      <label>Alege ora</label>
-      <select id="timePicker">
-        <option value="">Selectează ora</option>
-        <option>10:00</option>
-        <option>11:00</option>
-        <option>12:00</option>
-        <option>13:00</option>
-        <option>14:00</option>
-        <option>15:00</option>
-        <option>16:00</option>
-        <option>17:00</option>
-        <option>18:00</option>
-      </select>
-
-      <button onclick="sendWhatsApp()" class="btn">Confirmă</button>
-
-    </div>
-  </div>
-
-  <!-- SCRIPT FINAL -->
-  <script>
-    function openCalendar() {
-      document.getElementById("calendarPopup").style.display = "flex";
-
-      let today = new Date().toISOString().split("T")[0];
-      document.getElementById("datePicker").setAttribute("min", today);
-    }
-
-    function closeCalendar() {
-      document.getElementById("calendarPopup").style.display = "none";
-    }
-
-    function outsideClick(e) {
-      if (e.target.id === "calendarPopup") {
-        closeCalendar();
-      }
-    }
-
-    function sendWhatsApp() {
-      let name = document.getElementById("name").value;
-      let date = document.getElementById("datePicker").value;
-      let time = document.getElementById("timePicker").value;
-
-      if (!name || !date || !time) {
-        alert("Completează toate câmpurile!");
-        return;
+        let today = new Date().toISOString().split("T")[0];
+        document.getElementById("datePicker").setAttribute("min", today);
       }
 
-      let mesaj = `Bună! 👋
+      function closeCalendar() {
+        document.getElementById("calendarPopup").style.display = "none";
+      }
 
-  Numele meu este ${name}.
-
-  📅 Data: ${date}
-  ⏰ Ora: ${time}
-
-  Aștept confirmarea. Mulțumesc!`;
-
-      let url = `https://wa.me/40763621719?text=${encodeURIComponent(mesaj)}`;
-      window.open(url, "_blank");
-    }
-
-    /* LIGHTBOX */
-    let currentIndex = 0;
-    let images = [];
-
-    function openLightbox(img) {
-      images = Array.from(document.querySelectorAll("img[onclick='openLightbox(this)']"));
-      currentIndex = images.indexOf(img);
-
-      document.getElementById("lightbox").style.display = "flex";
-      document.getElementById("lightbox-img").src = img.src;
-
-      document.body.style.overflow = "hidden"; // 🔥 ADAUGAT
-    }
-
-    function closeLightbox() {
-      document.getElementById("lightbox").style.display = "none";
-
-      document.body.style.overflow = "auto"; // 🔥 ADAUGAT
-    }
-
-    function changeSlide(direction) {
-      currentIndex += direction;
-
-      if (currentIndex < 0) currentIndex = images.length - 1;
-      if (currentIndex >= images.length) currentIndex = 0;
-
-      document.getElementById("lightbox-img").src = images[currentIndex].src;
-    }
-    let startX = 0;
-    let isDragging = false;
-
-    const img = document.getElementById("lightbox-img");
-
-    img.addEventListener("touchstart", function (e) {
-      startX = e.touches[0].clientX;
-      isDragging = true;
-    });
-
-    img.addEventListener("touchmove", function (e) {
-      if (!isDragging) return;
-
-      let currentX = e.touches[0].clientX;
-      let diff = startX - currentX;
-
-      if (Math.abs(diff) > 60) {
-        if (diff > 0) {
-          changeSlide(1);
-        } else {
-          changeSlide(-1);
+      function outsideClick(e) {
+        if (e.target.id === "calendarPopup") {
+          closeCalendar();
         }
-        isDragging = false; // 🔥 previne multiple slide-uri
       }
-    });
 
-    img.addEventListener("touchend", function () {
-      isDragging = false;
-    });
-  </script>
+      function sendWhatsApp() {
+        let name = document.getElementById("name").value;
+        let date = document.getElementById("datePicker").value;
+        let time = document.getElementById("timePicker").value;
 
+        if (!name || !date || !time) {
+          alert("Completează toate câmpurile!");
+          return;
+        }
 
-  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        let mesaj = `Bună! 👋
 
-    <span class="close-lightbox" onclick="event.stopPropagation(); closeLightbox()">✖</span>
+    Numele meu este ${name}.
 
-    <span class="prev" onclick="event.stopPropagation(); changeSlide(-1)">❮</span>
-    <img id="lightbox-img" onclick="event.stopPropagation()">
-    <span class="next" onclick="event.stopPropagation(); changeSlide(1)">❯</span>
+    📅 Data: ${date}
+    ⏰ Ora: ${time}
 
-  </div>
-  <footer class="footer">
+    Aștept confirmarea. Mulțumesc!`;
 
-    <div class="footer-top-line"></div>
+        let url = `https://wa.me/40763621719?text=${encodeURIComponent(mesaj)}`;
+        window.open(url, "_blank");
+      }
 
-    <div class="footer-container">
+      /* LIGHTBOX */
+      let currentIndex = 0;
+      let images = [];
 
-      <!-- LOGO -->
-      <div class="footer-col">
-        <h2 class="footer-logo">Golden Elysium</h2>
-        <p class="footer-by">by Ramona Davitoiu</p>
-      </div>
+      function openLightbox(img) {
+        images = Array.from(document.querySelectorAll("img[onclick='openLightbox(this)']"));
+        currentIndex = images.indexOf(img);
 
-      <!-- CONTACT -->
-      <div class="footer-col">
-        <p><i class="fa-solid fa-phone"></i> 0763 621 719</p>
-        <p><i class="fa-solid fa-envelope"></i> ramonadavitoiu@yahoo.com</p>
-      </div>
+        document.getElementById("lightbox").style.display = "flex";
+        document.getElementById("lightbox-img").src = img.src;
 
-      <!-- SOCIAL -->
-      <div class="footer-col footer-social">
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-      </div>
+        document.body.style.overflow = "hidden"; // 🔥 ADAUGAT
+      }
 
-    </div>
+      function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
 
-    <p class="footer-copy">
-      © 2026 Golden Elysium
-    </p>
+        document.body.style.overflow = "auto"; // 🔥 ADAUGAT
+      }
 
-  </footer>
+      function changeSlide(direction) {
+        currentIndex += direction;
 
+        if (currentIndex < 0) currentIndex = images.length - 1;
+        if (currentIndex >= images.length) currentIndex = 0;
 
-  <script>
-    const reveals = document.querySelectorAll(".reveal");
+        document.getElementById("lightbox-img").src = images[currentIndex].src;
+      }
+      let startX = 0;
+      let endX = 0;
 
-    function revealOnScroll() {
-      const windowHeight = window.innerHeight;
+      const lightbox = document.getElementById("lightbox");
 
-      reveals.forEach(el => {
-        const elementTop = el.getBoundingClientRect().top;
+      lightbox.addEventListener("touchstart", function (e) {
+        startX = e.touches[0].clientX;
+      });
 
-        if (elementTop < windowHeight - 80) {
-          el.classList.add("active");
+      lightbox.addEventListener("touchend", function (e) {
+        endX = e.changedTouches[0].clientX;
+
+        let diff = startX - endX;
+
+        if (Math.abs(diff) > 60) {
+          if (diff > 0) {
+            changeSlide(1);
+          } else {
+            changeSlide(-1);
+          }
         }
       });
-    }
-
-    window.addEventListener("scroll", revealOnScroll);
-  </script>
+    </script>
 
 
-</body>
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
 
-</html>
+      <span class="close-lightbox" onclick="event.stopPropagation(); closeLightbox()">✖</span>
+
+      <span class="prev" onclick="event.stopPropagation(); changeSlide(-1)">❮</span>
+      <img id="lightbox-img" onclick="event.stopPropagation()">
+      <span class="next" onclick="event.stopPropagation(); changeSlide(1)">❯</span>
+
+    </div>
+    <footer class="footer">
+
+      <div class="footer-top-line"></div>
+
+      <div class="footer-container">
+
+        <!-- LOGO -->
+        <div class="footer-col">
+          <h2 class="footer-logo">Golden Elysium</h2>
+          <p class="footer-by">by Ramona Davitoiu</p>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="footer-col">
+          <p><i class="fa-solid fa-phone"></i> 0763 621 719</p>
+          <p><i class="fa-solid fa-envelope"></i> ramonadavitoiu@yahoo.com</p>
+        </div>
+
+        <!-- SOCIAL -->
+        <div class="footer-col footer-social">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+
+      </div>
+
+      <p class="footer-copy">
+        © 2026 Golden Elysium
+      </p>
+
+    </footer>
+
+
+    <script>
+      const reveals = document.querySelectorAll(".reveal");
+
+      function revealOnScroll() {
+        const windowHeight = window.innerHeight;
+
+        reveals.forEach(el => {
+          const elementTop = el.getBoundingClientRect().top;
+
+          if (elementTop < windowHeight - 80) {
+            el.classList.add("active");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", revealOnScroll);
+    </script>
+
+
+  </body>
+
+  </html>
