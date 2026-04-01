@@ -330,6 +330,7 @@ h2 {
   margin-bottom: 20px;
   font-family: 'Playfair Display', serif;
 }
+
 /*TITLUL DE LA  CREAM EXPERIENTE NU DOAR EVENIMENTE*/
 .experience-title {
   font-family: 'Playfair Display', serif;
@@ -345,9 +346,10 @@ h2 {
   letter-spacing: 0.5px;
 
   text-shadow:
-    0 4px 12px rgba(0,0,0,0.8),
-    0 8px 24px rgba(0,0,0,0.5),
-    0 0 12px rgba(224, 185, 115, 0.2); /* glow subtil gold */
+    0 4px 12px rgba(0, 0, 0, 0.8),
+    0 8px 24px rgba(0, 0, 0, 0.5),
+    0 0 12px rgba(224, 185, 115, 0.2);
+  /* glow subtil gold */
 }
 
 /* ACCENT GOLD */
@@ -355,7 +357,7 @@ h2 {
   color: #e3d072;
 
   text-shadow:
-    0 2px 6px rgba(0,0,0,0.9),
+    0 2px 6px rgba(0, 0, 0, 0.9),
     0 0 12px rgba(224, 185, 115, 0.8);
 }
 
@@ -364,19 +366,18 @@ h2 {
   content: "";
   display: block;
 
-  width: 280px; /* 🔥 mai lungă */
+  width: 280px;
+  /* 🔥 mai lungă */
   height: 2px;
 
   margin: 16px auto 0;
 
-  background: linear-gradient(
-    90deg,
-    #8c6b2f,
-    #e0b973,
-    #ffd700,
-    #e0b973,
-    #8c6b2f
-  );
+  background: linear-gradient(90deg,
+      #8c6b2f,
+      #e0b973,
+      #ffd700,
+      #e0b973,
+      #8c6b2f);
 
   background-size: 200% auto;
 
@@ -393,6 +394,7 @@ h2 {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -411,7 +413,7 @@ h2 {
   opacity: 0.60;
 
   text-shadow:
-    0 2px 6px rgba(0,0,0,0.9);
+    0 2px 6px rgba(0, 0, 0, 0.9);
 }
 
 
@@ -492,10 +494,21 @@ h2 {
 }
 
 /* DELAY pentru cards */
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-1 {
+  transition-delay: 0.1s;
+}
+
+.reveal-delay-2 {
+  transition-delay: 0.2s;
+}
+
+.reveal-delay-3 {
+  transition-delay: 0.3s;
+}
+
+.reveal-delay-4 {
+  transition-delay: 0.4s;
+}
 
 
 
@@ -813,8 +826,12 @@ h2 {
 
     overflow-x: auto;
     /* 🔥 scroll aici */
-    padding: 20px 0;
+    padding: 20px 16px;
     /* 🔥 fără stânga/dreapta */
+    scroll-snap-type: x mandatory;
+    scroll-padding: 16px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
   }
 
 
@@ -826,6 +843,7 @@ h2 {
   .card {
     flex: 0 0 85%;
     max-width: 85%;
+    scroll-snap-align: start;
   }
 
 }
