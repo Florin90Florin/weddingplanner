@@ -385,10 +385,14 @@
 
       document.getElementById("lightbox").style.display = "flex";
       document.getElementById("lightbox-img").src = img.src;
+    
+      document.body.style.overflow = "hidden"; // 🔥 ADAUGAT
     }
 
     function closeLightbox() {
       document.getElementById("lightbox").style.display = "none";
+
+      document.body.style.overflow = "auto"; // 🔥 ADAUGAT
     }
 
     function changeSlide(direction) {
