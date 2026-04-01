@@ -403,35 +403,44 @@
 
       document.getElementById("lightbox-img").src = images[currentIndex].src;
     }
+    const lightbox = document.getElementById("lightbox");
+
+    lightbox.addEventListener("click", function (e) {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
     let startX = 0;
     let isDragging = false;
-
-    const lightbox = document.getElementById("lightbox");
 
     lightbox.addEventListener("pointerdown", function (e) {
       startX = e.clientX;
       isDragging = true;
     });
 
-    lightbox.addEventListener("pointerup", function (e) {
+    lightbox.addEventListener("pointermove", function (e) {
       if (!isDragging) return;
 
       let diff = startX - e.clientX;
 
-      if (Math.abs(diff) > 60) {
+      if (Math.abs(diff) > 50) {
         if (diff > 0) {
           changeSlide(1);
         } else {
           changeSlide(-1);
         }
+        isDragging = false; // 🔥 oprește spam
       }
+    });
 
+    lightbox.addEventListener("pointerup", function () {
       isDragging = false;
     });
   </script>
 
 
-  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <div id="lightbox" class="lightbox">
 
     <span class="close-lightbox" onclick="event.stopPropagation(); closeLightbox()">✖</span>
 
