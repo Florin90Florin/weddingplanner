@@ -11,6 +11,7 @@ button:focus,
 a:focus {
   outline: none;
 }
+
 body {
   background: #fff;
   color: #333;
@@ -763,6 +764,7 @@ h2 {
   border-radius: 10px;
 
   animation: zoomIn 0.3s ease;
+  touch-action: none;
 }
 
 .close-lightbox {
