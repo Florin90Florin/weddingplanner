@@ -333,6 +333,20 @@
     </div>
   </div>
 
+
+
+
+  <div id="lightbox" class="lightbox">
+
+    <span class="close-lightbox" onclick="event.stopPropagation(); closeLightbox()">✖</span>
+
+    <span class="prev" onclick="event.stopPropagation(); changeSlide(-1)">❮</span>
+    <img id="lightbox-img" onclick="event.stopPropagation()">
+    <span class="next" onclick="event.stopPropagation(); changeSlide(1)">❯</span>
+
+  </div>
+
+
   <!-- SCRIPT FINAL -->
   <script>
     function openCalendar() {
@@ -376,6 +390,7 @@
     }
 
     /* LIGHTBOX */
+    /* LIGHTBOX */
     let currentIndex = 0;
     let images = [];
 
@@ -386,13 +401,13 @@
       document.getElementById("lightbox").style.display = "flex";
       document.getElementById("lightbox-img").src = img.src;
 
-      document.body.style.overflow = "hidden"; // 🔥 ADAUGAT
+      document.body.style.overflow = "hidden";
     }
 
     function closeLightbox() {
       document.getElementById("lightbox").style.display = "none";
 
-      document.body.style.overflow = "auto"; // 🔥 ADAUGAT
+      document.body.style.overflow = "auto";
     }
 
     function changeSlide(direction) {
@@ -403,6 +418,7 @@
 
       document.getElementById("lightbox-img").src = images[currentIndex].src;
     }
+
     const lightbox = document.getElementById("lightbox");
 
     lightbox.addEventListener("click", function (e) {
@@ -411,19 +427,8 @@
       }
     });
 
-   
   </script>
 
-
-  <div id="lightbox" class="lightbox">
-
-    <span class="close-lightbox" onclick="event.stopPropagation(); closeLightbox()">✖</span>
-
-    <span class="prev" onclick="event.stopPropagation(); changeSlide(-1)">❮</span>
-    <img id="lightbox-img" onclick="event.stopPropagation()">
-    <span class="next" onclick="event.stopPropagation(); changeSlide(1)">❯</span>
-
-  </div>
   <footer class="footer">
 
     <div class="footer-top-line"></div>
