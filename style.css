@@ -767,6 +767,10 @@ h2 {
   touch-action: none;
 }
 
+#lightbox-img {
+  transition: opacity 0.25s ease;
+}
+
 .close-lightbox {
   position: absolute;
   top: 20px;
