@@ -429,26 +429,23 @@
 
 
 
+    const lightboxImg = document.getElementById("lightbox-img");
+
     let startX = 0;
     let startY = 0;
-    let isSwiping = false;
 
-    lightbox.addEventListener("touchstart", function (e) {
+    lightboxImg.addEventListener("touchstart", function (e) {
       startX = e.touches[0].clientX;
       startY = e.touches[0].clientY;
-      isSwiping = true;
     }, { passive: true });
 
-    lightbox.addEventListener("touchend", function (e) {
-      if (!isSwiping) return;
-
+    lightboxImg.addEventListener("touchend", function (e) {
       let endX = e.changedTouches[0].clientX;
       let endY = e.changedTouches[0].clientY;
 
       let diffX = startX - endX;
       let diffY = startY - endY;
 
-      // 🔥 doar dacă e swipe orizontal
       if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
         if (diffX > 0) {
           changeSlide(1);
@@ -456,10 +453,7 @@
           changeSlide(-1);
         }
       }
-
-      isSwiping = false;
     });
-    
   </script>
 
   <footer class="footer">
