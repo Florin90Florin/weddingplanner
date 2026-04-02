@@ -151,52 +151,11 @@
   <script>
     const lightbox = document.getElementById("lightbox");
 
-// ✅ CLOSE PE FUNDAL (STABIL)
-lightbox.addEventListener("click", function (e) {
-  if (e.target === lightbox) {
-    closeLightbox();
-  }
-});
-
-// ✅ SWIPE REAL (ANDROID SAFE)
-let startX = 0;
-let startY = 0;
-let isSwiping = false;
-
-lightbox.addEventListener("touchstart", function (e) {
-  startX = e.touches[0].clientX;
-  startY = e.touches[0].clientY;
-  isSwiping = true;
-}, { passive: true });
-
-lightbox.addEventListener("touchmove", function (e) {
-  if (!isSwiping) return;
-
-  let currentX = e.touches[0].clientX;
-  let currentY = e.touches[0].clientY;
-
-  let diffX = startX - currentX;
-  let diffY = startY - currentY;
-
-  // 🔥 doar swipe orizontal
-  if (Math.abs(diffX) > Math.abs(diffY)) {
-
-    if (Math.abs(diffX) > 50) {
-      if (diffX > 0) {
-        changeSlide(1);
-      } else {
-        changeSlide(-1);
+    lightbox.addEventListener("click", function (e) {
+      if (e.target === lightbox) {
+        closeLightbox();
       }
-      isSwiping = false;
-    }
-
-    e.preventDefault(); // 🔥 oprește scroll
-  }
-}, { passive: false });
-
-lightbox.addEventListener("touchend", function () {
-  isSwiping = false;
-});
+    });
   </script>
 
 
