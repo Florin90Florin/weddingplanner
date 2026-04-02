@@ -146,30 +146,83 @@
   </div>
 
   <script>
+
+    /* LIGHTBOX */
     let currentIndex = 0;
     let images = [];
 
     function openLightbox(img) {
-      images = Array.from(document.querySelectorAll(".gallery-item img")); // 🔥 FIX FINAL
+      images = Array.from(document.querySelectorAll(".gallery-item img"));
       currentIndex = images.indexOf(img);
 
-      document.getElementById("lightbox").style.display = "flex";
-      document.getElementById("lightbox-img").src = img.src;
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+
+      lightbox.style.display = "flex";
+      lightboxImg.src = img.src;
+
+      document.body.style.overflow = "hidden"; // 🔥 IMPORTANT
     }
+
+    const lightboxImg = document.getElementById("lightbox-img");
+
+    let startX = 0;
+    let startY = 0;
+
+    lightboxImg.addEventListener("touchstart", function (e) {
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+    }, { passive: true });
+
+    lightboxImg.addEventListener("touchend", function (e) {
+      let endX = e.changedTouches[0].clientX;
+      let endY = e.changedTouches[0].clientY;
+
+      let diffX = startX - endX;
+      let diffY = startY - endY;
+
+      if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+        if (diffX > 0) {
+          changeSlide(1);
+        } else {
+          changeSlide(-1);
+        }
+      }
+    });
 
     function closeLightbox() {
       document.getElementById("lightbox").style.display = "none";
+
+      document.body.style.overflow = "auto"; // 🔥 IMPORTANT
     }
 
     function changeSlide(direction) {
-      currentIndex += direction;
+      const img = document.getElementById("lightbox-img");
 
-      if (currentIndex < 0) currentIndex = images.length - 1;
-      if (currentIndex >= images.length) currentIndex = 0;
+      img.style.opacity = 0;
 
-      document.getElementById("lightbox-img").src = images[currentIndex].src;
+      setTimeout(() => {
+        currentIndex += direction;
+
+        if (currentIndex < 0) currentIndex = images.length - 1;
+        if (currentIndex >= images.length) currentIndex = 0;
+
+        img.src = images[currentIndex].src;
+
+        img.style.opacity = 1;
+      }, 150);
     }
+
+    // 🔥 CLOSE PE FUNDAL
+    const lightbox = document.getElementById("lightbox");
+
+    lightbox.addEventListener("click", function (e) {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
   </script>
+
 
 
   <footer class="footer">
@@ -198,6 +251,8 @@
       </div>
 
     </div>
+
+
 
     <p class="footer-copy">
       © 2026 Golden Elysium
