@@ -147,10 +147,10 @@
     <span class="next" onclick="event.stopPropagation(); changeSlide(1)">❯</span>
 
   </div>
-
   <script>
     const lightbox = document.getElementById("lightbox");
 
+    // close doar pe fundal
     lightbox.addEventListener("click", function (e) {
       if (e.target === lightbox) {
         closeLightbox();
