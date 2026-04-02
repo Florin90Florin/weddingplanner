@@ -411,12 +411,20 @@
     }
 
     function changeSlide(direction) {
-      currentIndex += direction;
+      const img = document.getElementById("lightbox-img");
 
-      if (currentIndex < 0) currentIndex = images.length - 1;
-      if (currentIndex >= images.length) currentIndex = 0;
+      img.style.opacity = 0;
 
-      document.getElementById("lightbox-img").src = images[currentIndex].src;
+      setTimeout(() => {
+        currentIndex += direction;
+
+        if (currentIndex < 0) currentIndex = images.length - 1;
+        if (currentIndex >= images.length) currentIndex = 0;
+
+        img.src = images[currentIndex].src;
+
+        img.style.opacity = 1;
+      }, 150);
     }
 
     const lightbox = document.getElementById("lightbox");
