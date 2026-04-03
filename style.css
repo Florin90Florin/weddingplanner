@@ -291,15 +291,51 @@ section+section {
 }
 
 
+.servicii {
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
+  padding: 80px 20px;
+  position: relative;
+}
+
+.servicii-overlay {
+    background-image: linear-gradient(
+      rgba(0,0,0,0.3),
+      rgba(0,0,0,0.3)
+    ), url("poze/piloni.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  padding: 40px 20px;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.servicii-overlay > * {
+  position: relative;
+  z-index: 1;
+}
+
+.servicii h2 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 30px;
+}
 
 .extra-services {
   position: relative;
-  padding: 60px 20px 80px;
+  padding: 50px 20px 30px;
   text-align: center;
 
   border-radius: 16px;
   overflow: hidden;
+  
 }
 
 .extra-services::before {
@@ -324,9 +360,14 @@ section+section {
   margin-bottom: 20px;
 }
 
+.extra-services + section {
+  padding-top: 5px;
+}
+
 /* 🔥 CTA EXTRA SERVICES */
+
 .extra-cta {
-  padding: 60px 20px;
+  padding: 40px 20px 10px;
   text-align: center;
 }
 
@@ -344,6 +385,11 @@ h2 {
   font-size: 24px;
   margin-bottom: 20px;
   font-family: 'Playfair Display', serif;
+}
+
+
+.servicii {
+  padding-bottom: 5px;
 }
 
 /*TITLUL DE LA  CREAM EXPERIENTE NU DOAR EVENIMENTE*/
@@ -528,26 +574,81 @@ h2 {
 
 
 /* WHY */
-.why-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: #f3e8dc;
-  padding: 14px;
-  border-radius: 12px;
-  margin-top: 12px;
+
+
+.why h2 {
+  margin-bottom: 25px;
+}
+.why {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.why-item span {
-  background: #d4a373;
-  color: white;
-  width: 28px;
-  height: 28px;
+.why + .about {
+  padding-top: 5px;
+}
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 180px));
+  justify-content: center;
+  gap: 16px;
+  margin-top: 25px;
+}
+
+
+.why-card {
+  background: #fff;
+
+  padding: 20px 10px;
+  border-radius: 16px;
+
+  text-align: center;
+
+  border: 1px solid rgba(212, 163, 115, 0.2);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.06);
+
+  transition: all 0.3s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.08);
+}
+.why-icon {
+  width: 44px;
+  height: 44px;
+
+  margin: 0 auto 15px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #e0b973, #d4a373);
+
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
+
+  font-size: 16px;
+  color: white;
+
+  box-shadow: 0 6px 14px rgba(212, 163, 115, 0.4);
 }
+.why-card h3 {
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.why-card p {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+
+
 
 /* GALLERY PREMIUM */
 .gallery {
